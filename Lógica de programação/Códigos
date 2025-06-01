@@ -1,0 +1,35 @@
+programa {
+  funcao inicio() {
+    inteiro total_dezenas, marcadas, i
+    inteiro fatorial_total = 1
+    inteiro fatorial_marcadas = 1
+    inteiro fatorial_diferenca = 1
+    real possibilidades
+    
+    escreva("Informe o número total de dezenas disponiveis: ")
+    leia(total_dezenas)
+
+    escreva("Informe a quantidade de números marcados na cartela: ")
+    leia(marcadas)
+    
+    se (marcadas >= 6 e marcadas <= total_dezenas) {
+      para(i = 1; i <= total_dezenas; i++){
+          fatorial_total = fatorial_total*i
+      }
+
+      para(i = 1; i <= marcadas; i++){
+        fatorial_marcadas = fatorial_marcadas*i
+      }
+      
+      para(i = 1; i <= (total_dezenas - marcadas); i++){
+        fatorial_diferenca = fatorial_diferenca*i
+      }
+      possibilidades = fatorial_total / (fatorial_marcadas*fatorial_diferenca)
+      escreva("O total de possibilidades é igual a:", possibilidades)
+    }
+    senao{
+      escreva("Numero informado é inválido")
+    }
+  }
+}
+
